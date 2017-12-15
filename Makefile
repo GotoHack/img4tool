@@ -1,3 +1,4 @@
+
 # undefined = use OpenSSL
 # 1 = use included sources
 #CORECRYPTO = 1
@@ -8,9 +9,10 @@ CFLAGS += -std=c99 -Wno-variadic-macros -Wno-multichar -Wno-four-char-constants
 CFLAGS += -O2 -m64 -I. -g -DiOS10 -Ilzfse/src
 CFLAGS += -DDER_MULTIBYTE_TAGS=1 -DDER_TAG_SIZE=8
 CFLAGS += -D__unused="__attribute__((unused))"
-
+CFLAGS += -I/usr/local/opt/openssl/include
 LD = gcc
 LDFLAGS = -m64 -g -Llzfse/build/bin
+LDFLAGS =-L/usr/local/opt/openssl/lib
 LDLIBS = -llzfse
 
 SOURCES = \
